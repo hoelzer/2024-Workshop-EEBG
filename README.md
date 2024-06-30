@@ -30,7 +30,7 @@ in context of the the third edition of the Eastern European Bioinformatics and C
 | 11:00-11:15 | Welcome, [introduction](day-welcome-linux-container-wms/general.md) |
 | 11:15-12:00 | [Linux re-cap](day-welcome-linux-container-wms/linux.md) |
 | 12:00-13:00 | Lunch break |
-| 13:00-14:00 | Another lecturer (Tatiana Tatarinova, University of la Verne, USA) |
+| 13:00-14:00 | Another lecture (Tatiana Tatarinova, University of la Verne, USA) |
 | 14:00-15:00 | [Container & WMS](day-welcome-linux-container-wms/container-wms.md) |
 | 15:00-16:00 | [Hands-on & demo](day-welcome-linux-container-wms/hands-on.md) |
 | 15:45-16:00 | Wrap-up & questions |
@@ -42,7 +42,7 @@ in context of the the third edition of the Eastern European Bioinformatics and C
 | 11:00-11:30 | [Nanopore basecalling & data fromats](day-nanopore/README.md) |
 | 11:30-12:00 | [Nanopore QC](day-nanopore/README.md) |
 | 12:00-13:00 | Lunch break |
-| 13:00-14:00 | Another lecturer (Prof. Ian V. Toma, George Washington University, USA) |
+| 13:00-14:00 | Another lecture (Prof. Ian V. Toma, George Washington University, USA) |
 | 14:00-15:00 | [Metagenomic read classification](day-metagenomic-classification/README.md) |
 | 15:00-16:00 | [Hands-on & demo (metagenomics)](day-nanopore/hands-on-metagenomics.md) |
 | 15:00-16:00 | [Hands-on & demo](day-metagenomic-classification/hands-on.md) |
