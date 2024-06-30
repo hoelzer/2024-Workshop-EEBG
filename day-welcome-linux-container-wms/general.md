@@ -6,7 +6,7 @@
 
 Go to [pollev.com/martinholzer210](https://pollev.com/martinholzer210) on your browser or phone and wait until the poll is active.
 
-(instructore go [here](https://www.polleverywhere.com/multiple_choice_polls/GfILsS7srFQa0nlrEeuE2))
+(instructor go [here](https://www.polleverywhere.com/multiple_choice_polls/GfILsS7srFQa0nlrEeuE2))
 
 ## General information & Setup
 

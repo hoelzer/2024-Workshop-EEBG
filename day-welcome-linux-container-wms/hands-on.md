@@ -83,47 +83,6 @@ ls -lah
 ls -lah testdir/
 ```
 
-### HPC setup 
-
-If you are using your own (Linux) laptop or one provided for the workshops you are good to go. If you are using **an RKI Windows laptop**, you have to connect to the Linux High-Performance Cluster (HPC). You also need an account that you can request via an IT ticket. If you are working on another HPC that runs the SLURM job scheduler, such as the FU cluster, the following commands might be also interesting for you (see `srun` examples below).
-
-#### HPC access
-
-* Install `MobaXterm` via the RKI Software Kiosk
-* Open `MobaXterm`
-* Connect to the HPC login node, your instructors will tell you the name
-    * Select "Session": "SSH"
-    * "Remote host": "provided login node name" 
-    * "Username": RKI account name
-
-#### HPC usage
-
-* Detailed information on HPC infrastructure and usage can be found in the RKI Confluence, search for:
-    * "HPC Aufbau"
-    * "HPC Nutzung"
-    * "HPC FAQ"
-* Opening an interactive Shell
-    * On the HPC we have login and compute nodes. We dont want to compute on login nodes.
-    * An interactive shell is simply any shell process that you use to type commands, and get back output from those commands. That is, a shell with which you interact. We want to connect to a compute node for the workshop.
-    * Open `MobaXterm`` and connect to one of the login nodes (ask instructors)
-
-Opening an interactive shell on the RKI HPC:
-```sh
-#start an interactive bash session using the default ressources
-srun --pty bash -i
-
-#start an interactive bash session using 8 CPUs, 40GB RAM, 30GB HDD
-srun --cpus-per-task=8 --mem=40GB --gres=local:30 --pty bash -i
-
-#start an interactive bash session using 10 CPUs, 80GB RAM, 50GB HDD, 1GPU
-srun --cpus-per-task=10 --mem=80GB --gres=local:50 --gpus=1 --pty bash -i
-
-#IMPORTANT to free the blocked resources after our work is done close the interactive shell via:
-exit
-```
-Due to competing requests it may take some time until the requested resources can be provided by the system. Therefore, wait patiently until the prompt appears. Reducing requested resources might help as well.
-
-
 ### Install mamba (if done already on your machine: skip)
 
 * Mamba is a packaging manager that will help us to install bioinformatics tools and to handle their dependencies automatically
@@ -196,16 +155,16 @@ conda activate envs/workshop
 
 ```bash
 mkdir envs
-mamba create -y -p envs/workshop fastqc nanoplot filtlong flye bandage minimap2 tablet racon samtools igv
+mamba create -y -p envs/workshop fastqc nanoplot filtlong kraken2 sourmash minimap2 tablet samtools igv
 conda activate envs/workshop
 # test
 NanoPlot --help
-flye --version
+samtools --version
 ```
 
 __Reminder: You can also install specific versions of a tool!__
 * important for full reproducibility
-* e.g. `mamba install flye==2.9.0`
+* e.g. `mamba install kraken2==2.1.3`
 * per default, `mamba` will try to install the newest tool version based on your configured channels and system architecture and dependencies to other tools
 
 ### Create a folder for the hands-on work
