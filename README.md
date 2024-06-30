@@ -13,8 +13,7 @@ in context of the the third edition of the Eastern European Bioinformatics and C
 * [2024-07-09 - Tuesday: Welcome, Linux re-cap, container, and WMS](#0)  
 
 ### Nanopore sequencing, long-read bioinformatics, and metagenomics 
-* [2024-07-10 - Wednesday: Introduction to Nanopore sequencing, data formats, and QC](#1)  
-* [2024-07-10 - Wednesday: Metagenomic read classification](#1)
+* [2024-07-10 - Wednesday: Introduction to Nanopore sequencing and long-read metagenomics](#1)  
 
 ## Instructors
 
@@ -32,7 +31,7 @@ in context of the the third edition of the Eastern European Bioinformatics and C
 | 12:00-13:00 | Lunch break |
 | 13:00-14:00 | Another lecture (Tatiana Tatarinova, University of la Verne, USA) |
 | 14:00-15:00 | [Container & WMS](day-welcome-linux-container-wms/container-wms.md) |
-| 15:00-16:00 | [Hands-on & demo](day-welcome-linux-container-wms/hands-on.md) |
+| 15:00-15:45 | [Hands-on & demo](day-welcome-linux-container-wms/hands-on.md) |
 | 15:45-16:00 | Wrap-up & questions |
 
 ### <a name="1"></a> Wednesday, 10th July 2024
@@ -44,8 +43,8 @@ in context of the the third edition of the Eastern European Bioinformatics and C
 | 12:00-13:00 | Lunch break |
 | 13:00-14:00 | Another lecture (Prof. Ian V. Toma, George Washington University, USA) |
 | 14:00-15:00 | [Metagenomic read classification](day-metagenomic-classification/README.md) |
-| 15:00-16:00 | [Hands-on & demo (metagenomics)](day-nanopore/hands-on-metagenomics.md) |
-| 15:00-16:00 | [Hands-on & demo](day-metagenomic-classification/hands-on.md) |
+| 15:00-15:45 | [Hands-on & demo (metagenomics)](day-nanopore/hands-on-metagenomics.md) |
+| 15:00-15:45 | [Hands-on & demo](day-metagenomic-classification/hands-on.md) |
 | 15:45-16:00 | Wrap-up & questions |
 
 ## Additional material
