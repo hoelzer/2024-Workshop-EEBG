@@ -159,7 +159,7 @@ mamba create -y -p envs/workshop fastqc nanoplot filtlong kraken2 sourmash minim
 conda activate envs/workshop
 # test
 NanoPlot --help
-samtools --version
+kraken2 --version
 ```
 
 __Reminder: You can also install specific versions of a tool!__
