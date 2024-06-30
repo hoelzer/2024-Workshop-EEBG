@@ -3,8 +3,7 @@
 A practical introduction to 
 
 * Linux for bioinformatics (w/ a focus on `conda`/`mamba`, containers, and workflow management systems)
-* Nanopore sequencing & long-read bioinformatics
-* (Long-read) metagenomics
+* Nanopore sequencing, bioinformatics, and (long-read) metagenomics
 
 in context of the the third edition of the Eastern European Bioinformatics and Computational Genomics School ([EEBG 2024](https://www.eebgschool.org/)), Suceava, Romania. 
 
@@ -31,7 +30,7 @@ in context of the the third edition of the Eastern European Bioinformatics and C
 | 11:00-11:15 | Welcome, [introduction](day-welcome-linux-container-wms/general.md) |
 | 11:15-12:00 | [Linux re-cap](day-welcome-linux-container-wms/linux.md) |
 | 12:00-13:00 | Lunch break |
-| 13:00-14:00 | Another lecturer, "TBA" (Tatiana Tatarinova, University of la Verne, USA) |
+| 13:00-14:00 | Another lecturer (Tatiana Tatarinova, University of la Verne, USA) |
 | 14:00-15:00 | [Container & WMS](day-welcome-linux-container-wms/container-wms.md) |
 | 15:00-16:00 | [Hands-on & demo](day-welcome-linux-container-wms/hands-on.md) |
 | 15:45-16:00 | Wrap-up & questions |
@@ -43,16 +42,23 @@ in context of the the third edition of the Eastern European Bioinformatics and C
 | 11:00-11:30 | [Nanopore basecalling & data fromats](day-nanopore/README.md) |
 | 11:30-12:00 | [Nanopore QC](day-nanopore/README.md) |
 | 12:00-13:00 | Lunch break |
-| 13:00-14:00 | Another lecturer, "Biological Data Analysis and Interpretation" (Prof. Ian V. Toma, George Washington University, USA) |
+| 13:00-14:00 | Another lecturer (Prof. Ian V. Toma, George Washington University, USA) |
 | 14:00-15:00 | [Metagenomic read classification](day-metagenomic-classification/README.md) |
 | 15:00-16:00 | [Hands-on & demo (metagenomics)](day-nanopore/hands-on-metagenomics.md) |
 | 15:00-16:00 | [Hands-on & demo](day-metagenomic-classification/hands-on.md) |
 | 15:45-16:00 | Wrap-up & questions |
 
+## Additional material
+
+Because we only had limited time, you can find additional material and hands-on examples from previous workshops here:
+
+* [A practical introduction to long-read bioinformatics on the flu virus, Namibia, 2024](https://github.com/rki-mf1/2024-Workshop-Namibia)
+* [A practical introduction to short-read bioinformatics for bacterial genome reconstruction, Madagascar IGS workshop, 2023](https://github.com/rki-mf1/2023-Workshop-Madagascar-IGS)
+* [A practical introduction to long-read metagenomics, GHPP "Strengthening Genomic Surveillance" workshop at RKI, 2023](https://github.com/rki-mf1/2023-GHPP-SGS-Nanopore-Metagenomics)
 
 ## Acknowledgement
 
-This course material is partly based on the following resources and on contributions from great people (no specific order):
+This course material is partly based on the following resources & contributions from great people (no specific order):
 
 * Martin Hoelzer, RKI MF1, content about Linux, container, Nextflow, sequencing, genomic surveillance & glueing everything together
 * Sebastian "Raverjay" Krautwurst, FSU Jena, some Linux and ONT content
