@@ -5,7 +5,7 @@
 * Linux/Bash basics + conda setup ([slides](https://docs.google.com/presentation/d/14xELo7lDbd-FYuy144ZDK1tV_ZBdBYun_COelrKYWps/edit?usp=sharing))
 * Another good resource: [Introduction to the UNIX command line](https://ngs-docs.github.io/2021-august-remote-computing/introduction-to-the-unix-command-line.html)
 * Cheat sheet for Bash: [github.com/RehanSaeed/Bash-Cheat-Sheet](https://github.com/RehanSaeed/Bash-Cheat-Sheet)
-* An [online linux terminal to play with](https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&mem=192)
+* An [online linux terminal to play with    ](https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&mem=192)
 
 ### Small Cheat Sheet:
 ```bash
