@@ -156,16 +156,16 @@ conda activate envs/workshop
 
 ```bash
 mkdir envs
-mamba create -y -p envs/workshop fastqc nanoplot filtlong kraken2 sourmash minimap2 tablet samtools igv
-conda activate envs/workshop
+mamba create -y -p envs/qc nanoplot filtlong minimap2 samtools igv
+conda activate envs/qc
 # test
 NanoPlot --help
-kraken2 --version
+minimap2 --version
 ```
 
 __Reminder: You can also install specific versions of a tool!__
 * important for full reproducibility
-* e.g. `mamba install kraken2==2.1.3`
+* e.g. `mamba install minimap2==2.26`
 * per default, `mamba` will try to install the newest tool version based on your configured channels and system architecture and dependencies to other tools
 
 ### Create a folder for the hands-on work

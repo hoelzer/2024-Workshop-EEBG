@@ -114,13 +114,12 @@ Here are two databases pre-build on NCBI taxnomoy and sequences:
 
 ```bash
 mkdir -p databases/pre-build/ncbi
+cd databases/pre-build/ncbi
 # Standard, Refeq archaea, bacteria, viral, plasmid, human1, UniVec_Core
 wget https://genome-idx.s3.amazonaws.com/kraken/k2_standard_20230605.tar.gz
-mv k2_standard_20230605.tar.gz databases/pre-build/ncbi 
 
 # PlusPF-16, Standard plus Refeq protozoa & fungi capped at 16 GB
 wget https://genome-idx.s3.amazonaws.com/kraken/k2_pluspf_16gb_20230605.tar.gz
-mv k2_pluspf_16gb_20230605.tar.gz databases/pre-build/ncbi
 ```
 
 But there are also other databases, such as the Genome-Taxnomy Database ([GTDB](https://gtdb.ecogenomic.org/)) that can be more complete in terms of (uncultured) metagenome-derived species:
@@ -129,8 +128,8 @@ But there are also other databases, such as the Genome-Taxnomy Database ([GTDB](
 # https://bridges.monash.edu/articles/dataset/GTDB_r89_54k/8956970, e.g. we can download a 16GB capped version of the GTDB r89 54k dereplicated kraken2 database from this resource
 # more information: https://github.com/rrwick/Metagenomics-Index-Correction
 mkdir -p databases/pre-build/gtdb
+cd databases/pre-build/gtdb
 wget https://bridges.monash.edu/ndownloader/files/16378274 -O gtdb_r89_54k_kraken2_16gb.tar
-mv gtdb_r89_54k_kraken2_16gb.tar databases/pre-build/gtdb
 ```
 
 ## Kraken2 classification & visualization of results

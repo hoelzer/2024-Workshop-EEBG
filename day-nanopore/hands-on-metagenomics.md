@@ -16,8 +16,8 @@ Below are just example paths, you can also adjust them and use other folder name
 # Switch to a path on your system where you want to store your data and results
 cd /home/$USER
 # Create new folder
-mkdir 2023-ont-metagenomics-workshop
-cd 2023-ont-metagenomics-workshop
+mkdir nanopore-workshop
+cd nanopore-workshop
 ```
 
 It's always important that you keep a clean and descriptive folder structure when doing bioinformatics or data science in general. Let's start with creating a project directory. First, change to some location on your file system where you want to store the data and create the project folder, then:
@@ -29,6 +29,7 @@ It's always important that you keep a clean and descriptive folder structure whe
 - **Note**: Bioinformatics tools are regulary updated and input parameters might change (use `--help` or `-h` to see the manual for a tool!)
 - Install most of them into our environment
     - we will already install many tools that we will use over the next days!
+- **if you did that already before and have the environment, skip this**
 
 ```bash
 mkdir envs
@@ -66,7 +67,8 @@ After basecalling, we combined all `fastq_pass` reads yielding a 4.5 GB FASTQ fi
 
 ```bash
 # downsampling was used to reduce the size of the example data set, dont run this!
-conda activate seqkit
+mamba create -y -p envs/seqkit seqkit
+conda activate envs/seqkit
 zcat barcode01.fastq.gz | seqkit sample -p 0.1 -o zymo-2022-barcode01-perc10.fastq.gz
 ```
 
@@ -82,13 +84,13 @@ cd ..
 Let's download the example data and have a look on the FASTQ file! We place it in a `reads` folder in your working directory! This should then look like this:
 
 ```bash
-2023-ont-metagenomics-workshop/reads/zymo-2022-barcode01-perc10.fastq.gz
+nanopore-workshop/reads/zymo-2022-barcode01-perc10.fastq.gz
 ```
 
 ## Quality control (NanoPlot)
 
 ```bash
-# assuming you are in your working dir: 2023-ont-metagenomics-workshop and the "qc" environment is activated
+# assuming you are in your working dir: nanopore-workshop and the "qc" environment is activated
 NanoPlot -t 4 --fastq reads/zymo-2022-barcode01-perc10.fastq.gz --title "Raw reads" --color darkslategrey --N50 --loglength -f png -o nanoplot/raw
 ```
 
@@ -97,7 +99,7 @@ NanoPlot -t 4 --fastq reads/zymo-2022-barcode01-perc10.fastq.gz --title "Raw rea
 ## Read filtering (Filtlong)
 
 ```bash
-# Note: we use 1 kb as the minimum length cutoff as an example. For your "real" samples other parameters might be better. Do QC before. 
+# Note: we use 1 kb as the minimum read length cutoff as an example. For your "real" samples other parameters might be better! Do QC before. 
 filtlong --min_length 1000 reads/zymo-2022-barcode01-perc10.fastq.gz > reads/zymo-2022-barcode01-perc10.filtered.fastq
 
 # Check the quality again:
@@ -200,16 +202,9 @@ __Alternative ways to visualize such a mapping are given by (commercial software
 
 
 
-## Excercise
-
-Now check your own data! Perform QC. How does your own data compare to the example data in erms of yield and read length?
-
-**It's a good idea to make a new project folder for working on a new data set!**
-
-
 ## Bonus (and a little detour into containers)
 
-Do basecalling by your own. 
+Do basecalling by your own. **Note** this example uses `Guppy`, you can try that first. But the most recent basecaller is `Dorad`. Adapt the commands to also work with `Dorado`. 
 
 **Note that this can be quite tricky and involves deeper Linux knowledge. Usually, you will be fine with the FASTQ and the already basecalled data that comes out of MinKNOW.**
 
