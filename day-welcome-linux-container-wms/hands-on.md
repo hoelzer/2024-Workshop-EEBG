@@ -92,8 +92,9 @@ ls -lah testdir/
 * In the terminal enter:
 
 ```bash
-# Switch to a directory with enough space, this can be /scratch on a HPC or your ~ (remember that's short for /home/$USER) on your laptop
-cd /scratch/$USER
+# Switch to a directory with enough space, this can be /scratch on a HPC or 
+# your ~ (remember that's short for /home/$USER) on your laptop
+cd /home/$USER
 
 # make a new folder called 'workshop'
 mkdir workshop
@@ -172,8 +173,8 @@ __Reminder: You can also install specific versions of a tool!__
 Below are just example paths, you can also adjust them and use other folder names! Assuming you are on a Linux system on a local machine (laptop, workstation):
 
 ```sh
-# Switch to a path on your system where you want to store your data and results
-cd /scratch/$USER
+# Switch to a path on your system where you want to store your data and results, for example
+cd /home/$USER
 # Create new folder
 mkdir nanopore-workshop
 cd nanopore-workshop
