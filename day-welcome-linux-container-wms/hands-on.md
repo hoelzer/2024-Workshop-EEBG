@@ -96,11 +96,11 @@ ls -lah testdir/
 # your ~ (remember that's short for /home/$USER) on your laptop
 cd /home/$USER
 
-# make a new folder called 'workshop'
-mkdir workshop
+# make a new folder called 'nanopore-workshop'
+mkdir nanopore-workshop
 
 # switch to this folder
-cd workshop
+cd nanopore-workshop
 
 # Download mamba installer
 wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh"
@@ -137,16 +137,18 @@ conda config --add channels conda-forge
 
 ```bash
 # -n parameter to specify the name
-mamba create -p envs/workshop
+mkdir -p envs
+mamba create -p envs/qc
 
 # activate this environment
-conda activate envs/workshop
+mamba activate envs/qc
+# or if that does not work, fall-back to
+conda activate envs/qc
 
-# You should now see (workshop) at the start of each line.
-# You switched from the default 'base' environment to the 'workshop' environment.
-# Which is placed in a folder envs/workshop
+# You should now see (qc) at the start of each line.
+# You switched from the default 'base' environment to the 'qc' environment.
+# Which is placed in a folder envs/qc
 ```
-
 
 ### Install and use analysis tools
 
@@ -155,7 +157,7 @@ conda activate envs/workshop
     * we will already install many tools that we will use over the next days!
 
 ```bash
-mkdir envs
+mkdir -p envs
 mamba create -y -p envs/qc nanoplot filtlong minimap2 samtools igv
 conda activate envs/qc
 # test
@@ -168,24 +170,40 @@ __Reminder: You can also install specific versions of a tool!__
 * e.g. `mamba install minimap2==2.26`
 * per default, `mamba` will try to install the newest tool version based on your configured channels and system architecture and dependencies to other tools
 
-### Create a folder for the hands-on work
+### Create a folder for the hands-on work (if not already done)
 
 Below are just example paths, you can also adjust them and use other folder names! Assuming you are on a Linux system on a local machine (laptop, workstation):
 
 ```sh
 # Switch to a path on your system where you want to store your data and results, for example
 cd /home/$USER
-# Create new folder
+# Create new folder (if not already done)
 mkdir nanopore-workshop
 cd nanopore-workshop
 ```
 
 ### Container and WMS (brief intro)
 
-Check the small example at [https://github.com/hoelzer/nf_example](https://github.com/hoelzer/nf_example). Clone the repository using `git`. 
+**Attention**: the `Docker` part will not work on a VM or HPC. But you can try it on your own machine with `Docker`. **OR** you use `Singularity` instead. 
+
+Check the small example at [https://github.com/hoelzer/nf_example](https://github.com/hoelzer/nf_example). Clone the repository using `git`. **If the command is not available**: try `sudo apt install git`
+
+```bash
+git clone https://github.com/hoelzer/nf_example.git
+cd nf_example
+```
 
 Then investigate the `Dockerfile` and try to build the container image locally using `docker build .`. Remember that you can also give your container image a specific name using the `-t` parameter. 
 
 Install `nextflow`, for example directly from [https://nextflow.io/](https://nextflow.io/) or using `conda` or `mamba`. 
 
+```bash
+curl -s https://get.nextflow.io | bash
+# (it creates a file nextflow in the current dir which you can place also somewhere else)
+# check if it worked
+./nextflow -version
+```
+
 Try to get the little `nextflow` example workflow running. The workflow is using `sourmash` so you either need to install the dependency or provide an available container image, see these [code lines](https://github.com/hoelzer/nf_example/blob/master/main.nf#L14-L18). 
+
+If you want to use `Singularity` instead of `Docker`, change the appropriate code lines in the `nextflow.config`. Also, you need to install `Singularity` which you can either do via `mamba install singularity` (make sure you are in an activated environment where you want to install it) or using `sudo apt-get`. 
