@@ -9,7 +9,7 @@ We want to use `Kraken 2` for read classification. Let's install it:
 ```bash
 mkdir -p envs
 mamba create -y -p envs/kraken2 -c bioconda kraken2
-conda activate envs/kraken2 
+mamba activate envs/kraken2 
 ```
 
 Here is a good read about [Metagenome analysis using the Kraken software suite, _Nature Protocols_, 2022](https://www.nature.com/articles/s41596-022-00738-y).
@@ -184,7 +184,7 @@ But also visualize the results, e.g. with `Krona`
 
 ```bash
 # we install krona also in the kraken2 env
-conda activate kraken2
+mamba activate kraken2
 mamba install -c bioconda krona
 
 # when this is done, we need to update the NCBI taxonomy for Krona once:
@@ -210,7 +210,7 @@ ktImportTaxonomy -t 5 -m 3 -o krona-results/mock10.krona.html kraken-results/moc
 There is a nice software suite called `krakentools` helping with formatting `Kraken 2` output for subsequent analyses. To produce a similar `Krona` plot like before, we can also do:
 
 ```bash
-conda activate kraken2
+mamba activate kraken2
 # install krakentools
 mamba install -c bioconda krakentools
 # convert the kraken2 report output
