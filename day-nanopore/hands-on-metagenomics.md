@@ -182,13 +182,14 @@ samtools view -bS mapping/zymo-2022-listeria.sam | samtools sort -@ 4 > mapping/
 samtools index mapping/zymo-2022-listeria.sorted.bam
 
 # start IGV browser and load the assembly (FASTA) and BAM file, inspect the output
+# this might not work on a HPC or VM w/o display forwarding activated!
 igv &
 ```
 
 ### Alternative: Visualization of mapping (Tablet)
 
 ```bash
-# open the GUI
+# open the GUI (again, might not work on a VM or HPC)
 tablet &
 
 # load mapping file as 'primary assembly'
