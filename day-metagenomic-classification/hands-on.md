@@ -229,6 +229,8 @@ Another nice visualization can be done via so-called Sankey plots. We will us a 
 
 ## EXCERCISE
 
+### Diving deeper into Kraken 2
+
 Now, re-do the `Kraken 2` classification and visualizations using the `mock9` database (missing _Listeria_) instead of the `mock10` database.
 
 What do you notice? How many unclassified reads do you have in comparison?
@@ -269,3 +271,40 @@ kraken2 --threads 4 --db databases/pre-build/ncbi/k2_pluspf_16gb_20230605 --outp
 ```
 
 What do you find now? **Keep in mind how much impact the reference database always has on your results!**
+
+### Light-weight taxonomic classification with Sourmash
+
+We can use `sourmash` to classify the reads taxonomically using reference sequences as an alternative to `Kraken 2`.
+
+* compute sequence signatures for inputs (`compute`)
+* select 10000 hashes of input k-mers (`--scaled 10000`)
+* select 31 as k-mer size (`--k 31`)
+
+```bash
+mamba create -y -p envs/sourmash sourmash
+conda activate envs/sourmash
+
+# download sourmash GTDB index v202 w/ taxonomy
+# GTDB genomic representatives (47.8k genomes), LCA, kmer 31 --> https://sourmash.readthedocs.io/en/latest/databases.html
+# compared to kraken 2, this index file is much smaller! 131 MB
+wget --no-check-certificate https://osf.io/ypsjq/download -O gtdb-rs202.genomic-reps.k31.lca.json.gz 
+mkdir databases/sourmash
+mv gtdb-rs202.genomic-reps.k31.lca.json.gz databases/sourmash/
+DB='databases/sourmash/gtdb-rs202.genomic-reps.k31.lca.json.gz'
+
+# calculate signatures for your reads
+sourmash compute --scaled 10000 -k 31 reads/zymo-2022-barcode01-perc10.fastq.gz -o sourmash.sig
+sourmash lca classify --db $DB --query sourmash.sig -o sourmash-taxonomic-classification.txt
+
+#check results
+cat sourmash-taxonomic-classification.txt
+```
+
+What did `sourmash` found? Are you satisfied with the results? If not:
+
+- try first assembly (genome reconstruction) from the nanopore reads
+    - you can use `flye` with the `--meta` option (install via `mamba` and check the help how to run it)
+- when you have the assembled contigs, you can select large ones and individually classify them with `sourmash`
+    - what do you find now?
+
+Additional information on Sourmash: [Code](https://github.com/sourmash-bio/sourmash) | [Original Publication](https://joss.theoj.org/papers/10.21105/joss.00027) | [2024 Publication](https://joss.theoj.org/papers/10.21105/joss.06830)
