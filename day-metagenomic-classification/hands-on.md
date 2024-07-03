@@ -4,13 +4,15 @@ We will continue with the same example data from [ZymoBIOMICS Microbial Communit
 
 ## Kraken2 Install
 
-We want to use Kraken 2 for read classification. Let's install it:
+We want to use `Kraken 2` for read classification. Let's install it:
 
 ```bash
 mkdir -p envs
 mamba create -y -p envs/kraken2 -c bioconda kraken2
 conda activate envs/kraken2 
 ```
+
+Here is a good read about [Metagenome analysis using the Kraken software suite, _Nature Protocols_, 2022](https://www.nature.com/articles/s41596-022-00738-y).
 
 ## Kraken2 Databases
 
@@ -27,6 +29,8 @@ None of these three files are in a human-readable format. Other files may also b
 In interacting with Kraken 2, you should not have to directly reference any of these files, but rather simply provide the name of the directory in which they are stored. Kraken 2 allows both the use of a **standard** database as well as **custom** databases.
 
 ### Build our own custom database for Kraken2
+
+**We will probably not do that because of the size of data that needs to be downloaded. See below to download prepared databases!**
 
 Now, we build a custom database for the 10 species included in our mock community. And one with 9 species skipping _Listeria_.
 
@@ -108,7 +112,7 @@ kraken2-build --standard --threads 8 --db $DBNAME --use-ftp
 
 ### Pre-build Kraken2 databases
 
-It is also possible to just download pre-build databases, which is convenient but take care of the file size!
+It is also possible to just download pre-build databases, which is convenient but **take care of the file size**!
 
 Here are two databases pre-build on NCBI taxnomoy and sequences:
 
@@ -145,11 +149,11 @@ kraken2 --threads 4 --db databases/custom/mock10 --output kraken-results/mock10.
 
 ### The (terminal) output
 
-Each sequence (or read) classified by Kraken 2 results in a single line of output. Kraken 2's output lines contain five tab-delimited fields; from left to right, they are:
+Each sequence (or read) classified by `Kraken 2` results in a single line of output. `Kraken 2`'s output lines contain five tab-delimited fields; from left to right, they are:
 
 1. "C"/"U": a one letter code indicating that the sequence was either classified or unclassified.
 2. The sequence ID, obtained from the FASTA/FASTQ header.
-3. The taxonomy ID Kraken 2 used to label the sequence; this is 0 if the sequence is unclassified.
+3. The taxonomy ID `Kraken 2` used to label the sequence; this is 0 if the sequence is unclassified.
 4. The length of the sequence in bp. In the case of paired read data, this will be a string containing the lengths of the two sequences in bp, separated by a pipe character, e.g. "98|94".
 5. A space-delimited list indicating the LCA mapping of each k-mer in the sequence(s). For example, "562:13 561:4 A:31 0:1 562:3" would indicate that:
 
@@ -161,7 +165,7 @@ Each sequence (or read) classified by Kraken 2 results in a single line of outpu
 
 ### Sample Report Output Format
 
-Kraken 2's standard sample report format is tab-delimited with one line per taxon. The fields of the output, from left-to-right, are as follows:
+`Kraken 2`'s standard sample report format is tab-delimited with one line per taxon. The fields of the output, from left-to-right, are as follows:
 
 1. Percentage of fragments covered by the clade rooted at this taxon
 2. Number of fragments covered by the clade rooted at this taxon
@@ -172,7 +176,9 @@ Kraken 2's standard sample report format is tab-delimited with one line per taxo
 
 **Which species did we find?**
 
-We can investigate the output files. But also visualize the results, e.g. with Krona
+We can investigate the output files. 
+
+But also visualize the results, e.g. with `Krona`
 
 ### Krona
 
@@ -182,6 +188,8 @@ conda activate kraken2
 mamba install -c bioconda krona
 
 # when this is done, we need to update the NCBI taxonomy for Krona once:
+# again, this might be complicated when internet connection is slow! 
+# See below an alternative using `krakentools` that works w/o the taxonomy update
 ktUpdateTaxonomy.sh
 ```
 
@@ -190,7 +198,7 @@ We need two relevant columns for the Krona plot:
 - NCBI Taxonomy ID (-t)
 - counts (-m)
 
-In a default Kraken2 report, these are in columns 5 and 3, respectively, so we run the Krona command accordingly:
+In a default `Kraken 2` report, these are in columns 5 and 3, respectively, so we run the `Krona` command accordingly:
 
 ```bash
 mkdir krona-results
@@ -199,7 +207,7 @@ ktImportTaxonomy -t 5 -m 3 -o krona-results/mock10.krona.html kraken-results/moc
 
 #### Krona using krakentools (optional)
 
-There is a nice software suite called `krakentools` helping with formatting Kraken 2 output for subsequent analyses. To produce a similar Krona plot like before, we can also do:
+There is a nice software suite called `krakentools` helping with formatting `Kraken 2` output for subsequent analyses. To produce a similar `Krona` plot like before, we can also do:
 
 ```bash
 conda activate kraken2
@@ -217,17 +225,17 @@ Another nice visualization can be done via so-called Sankey plots. We will us a 
 
 - open the web tool
 - upload the `kraken-results/mock10.kraken.report` file
-- check the output in the "Results overview" and "Sample" reiters
+- check the output in the "Results overview" and "Sample" tabs
 
 ## EXCERCISE
 
-Now, re-do the Kraken 2 classification and visualizations using the `mock9` database (missing _Listeria_) instead of the `mock10` database.
+Now, re-do the `Kraken 2` classification and visualizations using the `mock9` database (missing _Listeria_) instead of the `mock10` database.
 
 What do you notice? How many unclassified reads do you have in comparison?
 
 **Note** that you can upload multiple samples in [Pavian](https://fbreitwieser.shinyapps.io/pavian)! That's quite convenient for comparisons!
 
-Now also try a much larger database that does not just have the species we actually know are in our mock community: For example, we can ue the "standard Kraken 2" database comprising Refeq archaea, bacteria, viral, plasmid, human, UniVec\_Core. The database should be in this folder: `databases/pre-build/ncbi/k2_standard_20230605.tar.gz`
+Now also try a much larger database that does not just have the species we actually know are in our mock community: For example, we can ue the "standard Kraken 2" database comprising Refeq archaea, bacteria, viral, plasmid, human, UniVec_Core. The database should be in this folder when you downloaded it like described above: `databases/pre-build/ncbi/k2_standard_20230605.tar.gz`
 
 Now, we need to extract it:
 
@@ -235,7 +243,7 @@ Now, we need to extract it:
 cd databases/pre-build/ncbi/
 mkdir k2_standard_20230605
 tar zxvf k2_standard_20230605.tar.gz -C k2_standard_20230605
-# this can take a moment... the database is large
+# this can take a moment... the database is large!
 ```
 
 Now, we again classify:
