@@ -188,7 +188,7 @@ mamba activate kraken2
 mamba install -c bioconda krona
 
 # when this is done, we need to update the NCBI taxonomy for Krona once:
-# again, this might be complicated when internet connection is slow! 
+# again, this might be complicated when internet connection is slow! But worked on the VMs for me... 
 # See below an alternative using `krakentools` that works w/o the taxonomy update
 ktUpdateTaxonomy.sh
 ```
