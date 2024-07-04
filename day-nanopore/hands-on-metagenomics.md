@@ -97,6 +97,21 @@ NanoPlot -t 4 --fastq reads/zymo-2022-barcode01-perc10.fastq.gz --title "Raw rea
 
 [Publication](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/bty149/4934939) | [Code](https://github.com/wdecoster/NanoPlot)
 
+### A note on how to investigate output files on a remote server (VM, ...)
+
+In case you are working on a remote Linux server, you can copy files from it to your local machine to open them with a graphical user interface (editor, firefox, image software, ...). For example, use the same login but instead of connecting via `ssh` copy data via `scp`:
+
+```bash
+# on your local (!) machine, make a folder where you want to copy stuff to
+cd ~
+mkdir nanopore-workshop
+cd nanopore-workshop
+scp -r fmsb@10.110.11.165:/home/fmsb/nanopore-workshop/nanoplot .
+```
+
+By that you can keep a copy of your results on your local machine for easier investigation. 
+
+
 ## Read filtering (Filtlong)
 
 ```bash
