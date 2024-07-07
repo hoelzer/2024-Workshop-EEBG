@@ -1,6 +1,6 @@
 # Workshop: Long-read Nanopore Metagenomics, Data Formats & Quality Control
 
-**Note**: If internet connection is slow, we can also distribute the example data via an USB stick (ask your instructor ;) ). 
+**Note**: If internet connection is slow, we can also distribute the example data via an USB stick (ask your instructor ;). 
 
 **General**: We will usually start with an "Hands-on" part that will guide you through some of the content from the lectures. Then, there is an "Excercise" part with more open questions. 
 
