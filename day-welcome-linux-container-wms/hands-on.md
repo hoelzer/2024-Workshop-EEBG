@@ -6,8 +6,7 @@
 
 **First thing:** To do the hands-on work directly, you need a running Linux system (or terminal on a Mac, or "Windows Subsystem for Linux"), and decent disk space (~20 GB) and RAM (~8 GB).
 
-**It might also be a good idea to work on the USV virtual machines!**
-(slides that were circulated earlier: https://docs.google.com/presentation/d/1gG1-Kw6Ofn2sEuUvAk521V0c9wDmLDSAGsvtBf-qgwk/edit?usp=drive_web)
+**It might also be a good idea to work on the USV virtual machines!** (remember the slides that were circulated earlier!)
 
 ```bash
 # you can use this slightly modified command to connect w/ X11 display forwarding
