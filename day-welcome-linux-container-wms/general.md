@@ -4,7 +4,7 @@
 
 ## Icebreaker!
 
-Go to [pollev.com/martinholzer210](https://pollev.com/martinholzer210) on your browser or phone and wait until the poll is active.
+Go to [pollev.com/martinholzer210](https://pollev.com/martinholzer210) on your browser or phone and wait until the poll is active. (skip the registering)
 
 (instructor go [here](https://www.polleverywhere.com/multiple_choice_polls/GfILsS7srFQa0nlrEeuE2))
 
