@@ -79,10 +79,10 @@ We isolated DNA from the Zymo community mix yielding 660 ng/~73 µl recovered wi
 After basecalling, we combined all `fastq_pass` reads yielding a 4.5 GB FASTQ file. For this workshop, we downsampled the FASTQ file down to 10% of the oiginal reads (345 MB) using the following command (**you dont have to do that!**):
 
 ```bash
-# downsampling was used to reduce the size of the example data set, dont run this! I did this for you!
-mamba create -y -p envs/seqkit seqkit
-conda activate envs/seqkit
-zcat barcode01.fastq.gz | seqkit sample -p 0.1 -o zymo-2022-barcode01-perc10.fastq.gz
+## JUST FOR INFORMATION: downsampling was used to reduce the size of the example data set, dont run this! I did this for you!
+#mamba create -y -p envs/seqkit seqkit
+#conda activate envs/seqkit
+#zcat barcode01.fastq.gz | seqkit sample -p 0.1 -o zymo-2022-barcode01-perc10.fastq.gz
 ```
 
 The downsampled FASTQ file can be downloaded [here](https://osf.io/buajf) or via this command:
