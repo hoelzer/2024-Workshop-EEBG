@@ -8,6 +8,18 @@
 
 :bulb: Think about a good and descriptive folder and file structure when working on the data!
 
+## How to connect to the Linux VM
+
+**First thing:** To do the hands-on work directly, you need a running Linux system (or terminal on a Mac, or "Windows Subsystem for Linux"), and decent disk space (~20 GB) and RAM (~8 GB).
+
+**It might also be a good idea to work on the USV virtual machines!** (remember the slides that were circulated earlier!)
+
+```bash
+# you can use this slightly modified command to connect w/ X11 display forwarding
+# depending on your local machine, this should work directly...
+ssh -X fmsb@<ip-adress-you-choose>
+```
+
 ## Create a folder for the hands-on work
 
 Below are just example paths, you can also adjust them and use other folder names! Assuming you are on a Linux system on a local machine (laptop, workstation):
