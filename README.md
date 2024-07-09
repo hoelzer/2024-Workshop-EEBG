@@ -37,15 +37,14 @@ in context of the the third edition of the Eastern European Bioinformatics and C
 ### <a name="1"></a> Wednesday, 10th July 2024
 | Time        | Nanopore & metagenomics read classification |
 | --          | --               |
-| 10:00-10:30 | [Nanopore intro](day-nanopore/README.md) |
-| 10:30-10:45 | [Nanopore basecalling & data fromats](day-nanopore/README.md) |
-| 10:45-11:00 | [Nanopore QC](day-nanopore/README.md) |
-| 11:00-12:00 | [Hands-on & demo (nanopore)](day-nanopore/hands-on-metagenomics.md) |
+| 09:00-10:00 | [Nanopore intro](day-nanopore/README.md) |
+| 10:00-10:15 | [Nanopore basecalling & data fromats](day-nanopore/README.md) |
+| 10:15-10:30 | [Nanopore QC](day-nanopore/README.md) |
+| 10:30-11:00 | [Hands-on & demo (nanopore)](day-nanopore/hands-on-metagenomics.md) |
+| 11:00-12:00 | [Metagenomic read classification](day-metagenomic-classification/README.md) |
 | 12:00-13:00 | Lunch break |
-| 13:00-14:00 | Another lecture (Prof. Ian V. Toma, George Washington University, USA) |
-| 14:00-15:00 | [Metagenomic read classification](day-metagenomic-classification/README.md) |
-| 15:00-15:45 | [Hands-on & demo (metagenomics)](day-metagenomic-classification/hands-on.md) |
-| 15:45-16:00 | Wrap-up & questions |
+| 13:00-13:45 | [Hands-on & demo (metagenomics)](day-metagenomic-classification/hands-on.md) |
+| 13:45-14:00 | Wrap-up & questions |
 
 ## Additional material
 
