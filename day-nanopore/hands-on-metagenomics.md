@@ -26,7 +26,7 @@ Below are just example paths, you can also adjust them and use other folder name
 
 ```sh
 # Switch to a path on your system where you want to store your data and results
-cd /home/$USER
+cd ~
 # Create new folder fo workshop (if not already done)
 mkdir -p nanopore-workshop
 cd nanopore-workshop
@@ -94,7 +94,7 @@ wget https://osf.io/buajf/download -O zymo-2022-barcode01-perc10.fastq.gz
 cd ..
 ```
 
-Let's download the example data and have a look on the FASTQ file! We place it in a `reads` folder in your working directory! This should then look like this:
+Let's download the example data and have a look on the FASTQ file! We placed it in a `reads` folder in your working directory! This should then look like this:
 
 ```bash
 nanopore-workshop/reads/zymo-2022-barcode01-perc10.fastq.gz

@@ -38,7 +38,7 @@ in context of the the third edition of the Eastern European Bioinformatics and C
 | Time        | Nanopore & metagenomics read classification |
 | --          | --               |
 | 09:00-09:30 | [Nanopore intro](day-nanopore/README.md) |
-| 09:30-09:45 | [Nanopore basecalling & data fromats](day-nanopore/README.md) |
+| 09:30-09:45 | [Nanopore basecalling & data formats](day-nanopore/README.md) |
 | 09:45-10:00 | [Nanopore QC](day-nanopore/README.md) |
 | 10:00-11:00 | [Hands-on & demo (nanopore)](day-nanopore/hands-on-metagenomics.md) |
 | 11:00-12:00 | [Metagenomic read classification](day-metagenomic-classification/README.md) |
